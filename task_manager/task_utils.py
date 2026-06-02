@@ -12,7 +12,7 @@ def add_task(title, description, due_date):
         "completed": False
     }
     tasks.append(new_task)
-    print("Task added successfully")
+    print("Task added successfully!")
     return True
 
 def mark_task_as_complete(title, tasks_list=tasks):
@@ -20,9 +20,9 @@ def mark_task_as_complete(title, tasks_list=tasks):
     for task in tasks_list:
         if task["title"].lower() == target_title:
             task["completed"] = True
-            print("Task marked as complete")
+            print("Task marked as complete!")
             return True
-    print("Task not found")
+    print("Task not found.")
     return False
 
 def view_pending_tasks(tasks_list=tasks):
