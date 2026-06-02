@@ -33,9 +33,12 @@ def main():
             description = input("Enter task description: ")
             due_date = input("Enter due date (YYYY-MM-DD): ")
             
-            if validate_task_title(title) and validate_task_description(description) and validate_task_due_date(due_date):
-                add_task(title, description, due_date)
-            else:
+            try:
+                if validate_task_title(title) and validate_task_description(description) and validate_task_due_date(due_date):
+                    add_task(title, description, due_date)
+                else:
+                    print("Task creation failed due to validation errors.")
+            except ValueError as e:
                 print("Task creation failed due to validation errors.")
                 
         # Route 2: Complete Task

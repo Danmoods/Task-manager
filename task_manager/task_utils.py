@@ -12,7 +12,7 @@ def add_task(title, description, due_date):
         "completed": False
     }
     tasks.append(new_task)
-    print("Task added successfully")
+    print("Task added successfully!")
     return True
 
 def mark_task_as_complete(title, tasks_list=tasks):
@@ -20,7 +20,7 @@ def mark_task_as_complete(title, tasks_list=tasks):
     for task in tasks_list:
         if task["title"].lower() == target_title:
             task["completed"] = True
-            print("Task marked as complete")
+            print("Task marked as complete!")
             return True
     print("Task not found.")
     return False
@@ -50,4 +50,3 @@ def calculate_progress(tasks_list=tasks):
     completed_count = len([t for t in tasks_list if t["completed"]])
     progress = (completed_count / total_tasks) * 100
     print(f"{progress:.1f}")
-    return int(progress)
